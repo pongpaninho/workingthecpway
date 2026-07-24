@@ -32,7 +32,7 @@
   margin-bottom: 1rem;
 }
 
-/* Utility class ที่ใช้บ่อย */
+/* Utility class ให้เต็มความสูงของ parent ที่เป็น flex-col */
 .page-content {
-  height: 100%;
+  flex: 1;
 }
