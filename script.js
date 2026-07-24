@@ -1,7 +1,7 @@
 // ไอคอน SVG ที่ใช้ซ้ำ
 const iconCheck = `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="text-white"><polyline points="20 6 9 17 4 12"/></svg>`;
 
-// ข้อมูลของแต่ละเพจ แปลงโครงสร้างจาก React Component เป็น HTML String
+// ข้อมูลของแต่ละเพจ
 const pagesData = [
   {
     title: "หน้าปก",
@@ -700,7 +700,6 @@ function updateControls() {
 // 3. ฟังก์ชันเรนเดอร์เมนู Sidebar
 function renderSidebarMenu() {
   const menuContainer = document.getElementById('sidebar-menu');
-  // เก็บ Header ของเมนูไว้ก่อนเคลียร์
   const header = `<div class="text-xs font-bold text-gray-400 mb-3 px-2 uppercase tracking-wider">Table of Contents</div>`;
   
   let menuHtml = header;
@@ -709,7 +708,7 @@ function renderSidebarMenu() {
     const activeClasses = isActive 
       ? 'bg-[#D4AF37] text-[#001A36] font-bold shadow-md' 
       : 'text-gray-300 hover:bg-white/10 hover:text-white';
-    const icon = idx === 0 ? '🏠' : \`\${idx}.\`;
+    const icon = idx === 0 ? '🏠' : `${idx}.`;
 
     menuHtml += `
       <button onclick="goToPage(${idx})" class="w-full text-left px-4 py-3 rounded-lg text-sm transition-all duration-200 ${activeClasses}">
@@ -742,7 +741,7 @@ function toggleSidebar() {
   }
 }
 
-// 5. ระบบ Checklist สำหรับหน้าสุดท้าย (แทนที่ useState ของ React)
+// 5. ระบบ Checklist สำหรับหน้าสุดท้าย
 let checkStates = Array(10).fill(false);
 
 function renderChecklist() {
@@ -775,8 +774,8 @@ function updateProgress() {
   const checkedCount = checkStates.filter(Boolean).length;
   const progress = Math.round((checkedCount / checkStates.length) * 100);
   
-  document.getElementById('progress-bar-fill').style.width = \`\${progress}%\`;
-  document.getElementById('progress-text').innerText = \`\${progress}% Complete\`;
+  document.getElementById('progress-bar-fill').style.width = `${progress}%`;
+  document.getElementById('progress-text').innerText = `${progress}% Complete`;
 }
 
 // Initialize หน้าแรกทันทีเมื่อโหลดเสร็จ
