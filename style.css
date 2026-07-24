@@ -1,0 +1,38 @@
+/* การปรับแต่ง Scrollbar */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: #cbd5e1;
+  border-radius: 20px;
+}
+
+/* Scrollbar สำหรับ Sidebar ที่มีพื้นหลังสีเข้ม */
+#sidebar .custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* อนิเมชันเวลาเปลี่ยนหน้า */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-in-up {
+  animation: fadeInUp 0.4s ease-out forwards;
+}
+
+/* Typography Overrides */
+.page-content p {
+  margin-bottom: 1rem;
+}
+.page-content ul, .page-content ol {
+  margin-bottom: 1rem;
+}
+
+/* Utility class ที่ใช้บ่อย */
+.page-content {
+  height: 100%;
+}
